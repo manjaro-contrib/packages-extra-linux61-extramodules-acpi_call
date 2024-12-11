@@ -29,7 +29,7 @@ build() {
 package() {
   _kernver="$(cat /usr/src/${_linuxprefix}/version)"
 
-  install -Dm644 "${_module}/${pkgver}/${_kernver}/$CARCH/module"/* -t \
+  install -Dm644 "${_module}/${pkgver}/${_kernver}/$CARCH/module"/*.ko* -t \
     "$pkgdir/usr/lib/modules/${_kernver}/extramodules/"
 
   # compress each module individually
